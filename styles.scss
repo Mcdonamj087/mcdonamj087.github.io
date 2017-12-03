@@ -1,0 +1,678 @@
+/*********  Variables  ********/
+
+$purp: #6E23FF;
+$pink: #FD7DFF;
+$sky: #38BEFF;
+$midnight: #42526E;
+
+$med: 900px;
+
+/******************************/
+
+
+@font-face {
+	font-family: 'Rockwell-Bold';
+	src: url('assets/fonts/webfonts/Rockwell-Bold.woff2') format('woff2'),
+		 url('assets/fonts/webfonts/Rockwell-Bold.woff') format('woff'),
+		 url('assets/fonts/webfonts/Rockwell-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Circular Pro';
+	src: url('assets/fonts/webfonts/CircularPro-Bold.woff2') format('woff2'),
+    	 url('assets/fonts/webfonts/CircularPro-Bold.woff') format('woff'),
+		 url('assets/fonts/webfonts/CircularPro-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circular Pro';
+	src: url('assets/fonts/webfonts/CircularPro-Medium.woff2') format('woff2'),
+		 url('assets/fonts/webfonts/CircularPro-Medium.woff') format('woff'),
+		 url('assets/fonts/webfonts/CircularPro-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circular Pro';
+	src: url('assets/fonts/webfonts/CircularPro-Book.woff2') format('woff2'),
+		 url('assets/fonts/webfonts/CircularPro-Book.woff') format('woff'),
+		 url('assets/fonts/webfonts/CircularPro-Book.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	}
+
+@font-face {
+  font-family: emoji;
+
+  src: local('Apple Color Emoji'),
+       local('Android Emoji'),
+       local('Segoe UI'),
+       local(EmojiSymbols),
+       local(Symbola),
+       url('font/Symbola-Emoji.eot?#iefix') format('embedded-opentype'),
+       url('font/Symbola-Emoji.woff') format('woff'),
+       url('font/Symbola-Emoji.ttf') format('truetype');
+
+  /* Emoji unicode blocks */
+  unicode-range: U+1F300-1F5FF, U+1F600-1F64F, U+1F680-1F6FF, U+2600-26FF;
+}
+
+/**************** McDeez's Resets *****************/
+*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box;	box-sizing: border-box;	}
+body { font-family: 'Circular Pro', sans-serif;	font-weight: 300; margin: 0; color: $midnight; }
+h1, h2, h3, h4, h5, h6, p, ol, ul {	margin: 0;	padding: 0;	line-height: 1em; }
+a {text-decoration: none;}
+
+/**************** Global *****************/
+.clearfix:before,
+.clearfix:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.purp {
+	color: $purp;
+}
+
+.pink {
+	color: $pink;
+}
+
+.shadow-box {
+	background: #fff;
+	box-shadow: 6px 30px 30px rgba(0,0,0,0.1);
+}
+
+[class^="col-"] {
+	padding: 15px;
+}
+
+a {
+	position: relative;
+	color: #6534ff;
+
+
+	&:before {
+		content: "";
+		position: absolute;
+		width: 110%;
+		transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+		height: 4px;
+		bottom: 7px;
+		left: -4px;
+		background: $pink;
+	}
+	
+	&:hover:before {
+	width: 0%;
+	}
+}
+
+h3 a:before {
+	bottom: 10px;
+	width: 104%;
+}
+
+p {
+	font-size: 18px;
+	letter-spacing: 0.03em;
+	line-height: 1.8em;
+	letter-spacing: 0.23px;
+	color: #6C798F;
+
+	&.larger {
+		font-size: 20px;
+	}
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Rockwell-Bold', serif;
+}
+
+h1 { font-size: 54px; }
+h2 { font-size: 36px; margin-bottom: 20px; }
+h3 { font-size: 28px; line-height:1.4em; }
+h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
+
+.gradient-text {
+	display: inline-block;
+	background: -webkit-linear-gradient(360deg, $pink, $purp);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.gradBorder {
+	padding: 15px;
+	position: relative;
+	margin: 0 auto;
+	height: 1000px;
+	max-width: 680px;
+	
+	.border-top, .border-bottom {
+		position: absolute;
+		right: 0;
+		left: 0;
+		height: 4px;
+	}
+	
+	.border-top {
+		top: 0;
+		background-color: $pink;
+		background-image: 
+			linear-gradient(to right, transparent 50%, #fff 50%);
+		background-size: 20px 7px, 100%;
+	}
+	
+	.border-bottom {
+		bottom: 0;
+		background-color: $sky;
+		background-image: 
+			linear-gradient(to right, transparent 50%, #fff 50%);
+		background-size: 20px 7px, 100%;
+	}
+
+	.border-left, .border-right {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 4px;
+		background-image: 
+			linear-gradient(to bottom, transparent 50%, #fff 50%), 
+			linear-gradient(to bottom, $pink, $purp, $sky);
+		background-size: 7px 20px, 100%;
+	}
+	
+	.border-left {
+		left: 0;
+	}
+
+	.border-right {
+		right: 0;
+	}
+}
+
+
+
+/**************** Navigation *****************/
+#los-nav {
+	width: 100%;
+	height: 120px;
+	background: #fff;
+	position: fixed;
+	z-index: 10000000;
+	//transition: all 1s cubic-bezier(.39,-0.17,.19,1.38);
+
+	@media screen and (max-width: $med) {
+		height: 90px;
+	}
+	
+	.container {
+	max-width: 1100px;
+	margin: 0 auto;
+	
+		.row {
+		display: table;
+		height: 100%;
+		width: 100%;
+		}
+	}
+	
+	.col-logo, .col-link-wrapper  {
+		display: table-cell;
+		vertical-align: middle;
+
+		@media screen and (max-width: 768px) {
+			text-align: center;
+		}
+	}
+
+
+
+	.col-link-wrapper {
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
+	}
+	
+	.col-logo span {
+		font-family: 'Circular Pro', sans-serif;
+		font-weight: 500;
+		font-size: 30px;
+		position: relative;
+		bottom: 2px;
+	}
+	
+	.col-link-wrapper ul {
+		list-style: none;
+		float: right;
+
+		li {
+			display: inline-block;
+			margin-left: 40px;
+			font-size: 20px;
+			font-weight: 500;
+		}
+	}
+}
+
+/**************** Intro Section *****************/
+#intro {
+	padding: 210px 0 150px;
+
+	@media screen and (max-width: 768px) {
+		padding: 120px 0 150px
+	}
+	
+	.container {
+		max-width: 1100px;
+		margin: 0 auto;
+		
+		.row {
+			display: flex;
+			align-items: center;
+
+			@media screen and (max-width: 768px) {
+				display: block;
+			}
+		}
+	}
+	
+	.col-left {
+		width: 38%;
+		
+		.los-image {
+			height: 400px;
+			width: 400px;
+
+			img {
+				width: 100%;
+
+				&.primary {
+					@media screen and (max-width: 768px) {
+						display: none;
+					}
+				}
+
+				&.secondary {
+					display: none;
+
+					@media screen and (max-width: 768px) {
+						display: block;
+					}		
+				}
+			}
+
+			.social-icons {
+				padding: 20px 15px 0;
+
+				a:before {
+					content: none;
+				}
+
+				@media screen and (max-width: 768px) {
+					display: flex;
+					justify-content: center;
+					padding-top: 60px;
+				}
+			
+				img {
+					margin-right: 12px;
+					max-width: 28px;
+
+					@media screen and (max-width: 768px) {
+						margin: 0 12px;
+					}
+				}
+			}
+		@media screen and (max-width: 768px) {
+			width: 260px;
+			margin: 0 auto;
+		}			
+
+
+		}
+	}
+
+	.col-right {
+		width: 62%;
+
+		@media screen and (max-width: 768px) {
+			padding: 0 60px;
+		}
+	}
+
+	.col-left, .col-right {
+		@media screen and (max-width: 768px) {
+			display: block; 
+	        float: none; 
+	        width: 100%;
+		}
+	}
+		
+	.intro-text {
+		margin-left: 15px;
+		font-family: 'Rockwell-Bold', serif;
+
+		@media screen and (max-width: 768px) {
+			margin: 0;
+		}
+	
+
+		h1 { margin-bottom: 30px;
+			
+			span {
+				color: $pink;
+			
+				&:first-of-type {
+					color: $purp;
+				}
+			}
+		}
+	}
+}
+
+/**************** Portfolio *****************/
+
+#portfolio {
+	padding: 0 0 150px;
+
+	.container {
+		max-width: 1100px;
+		margin: 0 auto;
+	
+		.row {
+			position: relative;
+			margin: 0 40px;
+		}
+	}
+
+	.gradBorder {
+		@media screen and (max-width: 768px) {
+			width: 80%;
+		}
+
+	}
+	
+	.portfolio-container {
+		padding: 15px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+	
+		.portfolio-text {
+			width: 82%; 
+			margin: 0 auto 100px;
+
+			@media screen and (max-width: 768px) {
+				width: 62%;
+			}
+			
+			h2 {
+				margin-top: 50px;
+			}
+		}
+	}
+	
+	.project-container-row {
+		display: flex;
+		justify-content: space-between;
+
+		.project {
+			max-width: 280px;
+			margin: 0 15px;
+			position: relative;
+
+			svg {
+				width: 100%;
+			    
+			    transition: transform 0.7s cubic-bezier(.47,0,.25,1);
+
+				&.p1 { transform: rotateZ(6deg) }
+				&.p2 { transform: rotateZ(-11deg) }
+				&.p3 { transform: rotateZ(7deg)	}
+				&.p4 { transform: rotateZ(-3deg) }
+				&.p5 { transform: rotateZ(2deg) }
+				&.p6 { transform: rotateZ(-6deg) }
+
+				&:hover { transform: rotateZ(0) }
+
+				&.p3, &.p6 {
+					@media screen and (max-width: 768px) {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	
+}
+
+/**************** Roles *****************/
+
+
+#roles {
+
+	.container {
+		position: relative;
+		max-width: 980px;
+		margin: 0 auto;
+		height: 910px;
+	}
+
+	svg.roles-pic {
+		transform: rotateZ(-3deg);
+		width: 280px;
+	}
+	
+	svg.roles-gradient-lines {
+		position: absolute;
+		top: 100px;
+		left: -70px;
+		width: 440px;
+	}
+
+	.shadow-box {
+		position: absolute;
+		width: 720px;
+		height: 500px;
+		top: 20px;
+		left: 50px;
+	}
+
+	.roles-text {
+		position: absolute;
+	    top: 120px;
+	    right: 40px;
+	    max-width: 515px;
+				
+		h3 {
+			margin-bottom: 30px;
+		}
+
+		h4 {
+			margin-top: 30px;
+		}
+		
+		.first-half {
+			width: 50%;
+			float: left;
+		}
+
+		.second-half {
+			padding-left: 40px;
+			width: 50%;
+			float: left;
+		}
+	}
+
+	.rolesBorder-wrap {
+		position: absolute;
+		margin: 15px;
+		top: 230px;
+		right: 0;
+	
+	
+		.gradBorder {
+			padding: 15px;
+			position: relative;
+			margin: 0 auto;
+			height: 860px;
+			width: 680px;
+			z-index: 0;
+			
+			.border-top, .border-bottom {
+				background-color: $pink;
+				background-image: linear-gradient(to right, transparent 50%, #fff 50%);
+			}
+						
+			.border-left, .border-right {
+				background-color: $pink;
+				background-image: linear-gradient(to bottom, transparent 50%, #fff 50%), 
+			}
+		}
+	}
+}
+
+/**************** Philosophy *****************/
+
+
+#philosophy {
+
+	.container {
+		max-width: 980px;
+		margin: 0 auto;
+		position: relative;
+	}
+
+	.shadow-box {
+		position: absolute;
+		height: 515px;
+		width: 920px;
+		top: -40px;
+		left: -120px;
+
+		@media screen and (max-width: $med) {
+			left: 50px;
+			right: 50px;
+			width: auto;
+		}
+	}
+	
+	.philosophy-text {
+		position: relative;
+		z-index: 2;
+		max-width: 680px;
+		padding: 15px;
+		
+		h3 {
+			margin-bottom: 30px;
+		}
+
+		@media screen and (max-width: $med) {
+			margin: 0 auto;
+		}
+	}
+}
+
+/**************** Podcast *****************/
+
+#podcast {
+	position: relative;
+    top: -90px;
+    height: 1300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+	.squiggles {
+		position: absolute;
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		transform: translateX(-50%);
+		z-index: -200;
+	}
+	
+	.shadow-box {
+		width: 920px;
+		height: 600px;
+		position: relative;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		transition: all 1s cubic-bezier(.39,-0.17,.19,1.38);
+
+		@media screen and (max-width: $med) {
+			width: 720px;
+    		height: 760px;
+    		margin: 20px;
+		}
+		
+		.travlos-logo {
+			position: absolute;
+			width: 400px;
+			top: 50%;
+			transform: translateY(-50%);
+			left: -120px;
+			transition: all 1s cubic-bezier(.39,-0.17,.19,1.38);
+
+			@media screen and (max-width: $med) {
+				top: 26px;
+				transform: translate(-50%, -50%);
+				left: 50%;
+				width: 300px;
+			}
+		}
+	}
+	
+	svg {
+		height: 100%;
+	}
+
+	.podcast-text {
+		position: relative;
+		width: 62%;
+		padding-right: 70px;
+		transition: all 1s cubic-bezier(.39,-0.17,.19,1.38);
+
+		@media screen and (max-width: $med) {
+		    top: 70px;
+		    margin: 0 auto;
+		    padding: 0;
+		    width: 54%;
+		    min-width: 500px;
+		}
+		
+	
+		p {
+			margin-top: 20px;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+/**************** Footer *****************/
+
+footer {
+	text-align: center;
+	margin-top: 60px;
+	margin-bottom: 130px;
+	
+	h4 {
+		width: 490px;
+		font-family: 'Rockwell-Bold', serif;
+		font-size: 24px;
+		color: $midnight;
+		margin-bottom: 30px;
+		line-height: 1.4em;
+		letter-spacing: 0.23px;
+	}
+}
+
+
