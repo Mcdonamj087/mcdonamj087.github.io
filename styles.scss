@@ -5,7 +5,7 @@ $pink: #FD7DFF;
 $sky: #38BEFF;
 $midnight: #42526E;
 
-$med: 768px;
+
 
 /******************************/
 
@@ -124,6 +124,11 @@ p {
 	letter-spacing: 0.23px;
 	color: #6C798F;
 
+	@media screen and (max-width: 375px) {
+		font-size: 16px;
+		line-height: 26px;
+	}
+
 	&.larger {
 		font-size: 20px;
 	}
@@ -138,6 +143,23 @@ h1 { font-size: 54px; }
 h2 { font-size: 36px; margin-bottom: 20px; }
 h3 { font-size: 28px; line-height:1.4em; }
 h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
+
+@media screen and (max-width: 375px) {
+	h1 {
+		font-size: 38px;
+    	line-height: 48px;
+    	letter-spacing: 0.87px;
+	}
+
+	h2 {
+		font-size: 28px;
+	}
+
+	h3 {
+		font-size: 22px;
+		letter-spacing: 0.18px;
+	}
+}
 
 .gradient-text {
 	display: inline-block;
@@ -207,8 +229,12 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 	z-index: 10000000;
 	//transition: all 1s cubic-bezier(.39,-0.17,.19,1.38);
 
-	@media screen and (max-width: $med) {
+	@media screen and (max-width: 768px) {
 		height: 90px;
+	}
+
+	@media screen and (max-width: 375px) {
+		height: 70px;
 	}
 	
 	.container {
@@ -265,9 +291,14 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 	padding: 210px 0 150px;
 
 	@media screen and (max-width: 768px) {
-		padding: 120px 0 150px
+		padding-top: 120px;
 	}
-	
+
+	@media screen and (max-width: 375px) {
+		padding-top: 100px;
+		padding-bottom: 60px;
+	}
+		
 	.container {
 		max-width: 1100px;
 		margin: 0 auto;
@@ -330,7 +361,8 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 				}
 			}
 		@media screen and (max-width: 768px) {
-			width: 260px;
+			width: inherit;
+			max-width: 260px;
 			margin: 0 auto;
 		}			
 
@@ -343,6 +375,14 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 
 		@media screen and (max-width: 768px) {
 			padding: 0 60px;
+		}
+
+		@media screen and (max-width: 470px) {
+			padding: 0 40px;
+		}
+
+		@media screen and (max-width: 375px) {
+			padding: 0 20px;
 		}
 	}
 
@@ -385,6 +425,10 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 		padding-bottom: 190px;
 	}
 
+	@media screen and (max-width: 375px) {
+		padding-bottom: 155px;
+	}
+
 	.container {
 		max-width: 1100px;
 		margin: 0 auto;
@@ -392,65 +436,154 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 		.row {
 			position: relative;
 			margin: 0 40px;
+
+			@media screen and (max-width: 375px) {
+				margin: 0 20px;
+			}
 		}
 	}
 
 	.gradBorder {
 		@media screen and (max-width: 768px) {
 			width: 80%;
+			height: 1100px;
+		}
+
+		@media screen and (max-width: 670px) {
+			height: 940px;
+		}
+
+		@media screen and (max-width: 570px) {
+			height: 880px;
+		}
+
+		@media screen and (max-width: 470px) {
+			height: 1120px;
+		}
+
+		@media screen and (max-width: 375px) {
+			background: #fff;
+			box-shadow: 6px 30px 30px rgba(0,0,0,0.1);
+			height: 930px;
+		}
+
+		&> div {
+			display: block;
+
+			@media screen and (max-width: 375px) {
+				display: none;
+			}
 		}
 
 	}
 	
 	.portfolio-container {
-		padding: 15px;
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
+
+		@media screen and (max-width: 375px) {
+			padding: 0;
+		}
 	
 		.portfolio-text {
-			width: 82%; 
-			margin: 0 auto 100px;
+			width: 79.5%; 
+			margin: 65px auto 100px;
 
 			@media screen and (max-width: 768px) {
 				width: 62%;
 			}
 			
-			h2 {
-				margin-top: 50px;
+			@media screen and (max-width: 375px) {
+				width: inherit;
+				margin: 90px 0 50px;
 			}
 		}
 	}
 	
 	.project-container-row {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
+		//width: 91.5%;
+		width: 100%;
+		margin: 0 auto;
+
+		@media screen and (max-width: 768px) {
+			width: inherit;
+			margin: inherit;
+		}
 
 		.project {
-			max-width: 280px;
-			margin: 0 15px;
-			position: relative;
+			//max-width: 280px;
+			max-width: 300px;
+			margin: 15px;
+			position: relative;	
+
+			@media screen and (max-width: 768px) {
+				max-width: inherit;
+				width: 50%;
+			}
+
+			@media screen and (max-width: 470px) {
+				margin: 0;
+				max-width: inherit;
+			}
+
+			&.p1 { 
+				@media screen and (max-width: 470px) {
+					margin-bottom: 35px;
+				}
+				svg { transform: rotateZ(6deg) }
+			}
+			&.p2 { 
+				svg { transform: rotateZ(-11deg) }
+			}
+			&.p3 { 
+				svg { transform: rotateZ(7deg) }
+			}
+			&.p4 { 
+				@media screen and (max-width: 470px) {
+					text-align: right;
+				}
+				svg { transform: rotateZ(-3deg) }
+			}
+			&.p5 { 
+				svg { transform: rotateZ(2deg) }
+			}
+			&.p6 { 
+				svg { transform: rotateZ(-6deg) }
+			}
+
+			&.p3, &.p6 {
+				@media screen and (max-width: 768px) {
+					display: none;
+				}
+			}
+			&.p2, &.p5 {
+				@media screen and (max-width: 470px) {
+					display: none;
+				}
+			}
+
+			&.p1, &.p4 {
+				@media screen and (max-width: 470px) {					
+					width: 100%;
+				}
+				svg {
+					@media screen and (max-width: 470px) {
+						width: 85%;
+					}
+				}
+			}
 
 			svg {
 				width: 100%;
-			    
 			    transition: transform 0.7s cubic-bezier(.47,0,.25,1);
 
-				&.p1 { transform: rotateZ(6deg) }
-				&.p2 { transform: rotateZ(-11deg) }
-				&.p3 { transform: rotateZ(7deg)	}
-				&.p4 { transform: rotateZ(-3deg) }
-				&.p5 { transform: rotateZ(2deg) }
-				&.p6 { transform: rotateZ(-6deg) }
+			    &:hover { transform: rotateZ(0) }
 
-				&:hover { transform: rotateZ(0) }
-
-				&.p3, &.p6 {
-					@media screen and (max-width: 768px) {
-						display: none;
-					}
-				}
+				
 			}
 		}
 	}
@@ -470,7 +603,15 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 		height: 910px;
 
 		@media screen and (max-width: 768px) {
-			margin-bottom: 275px;
+			height: 1150px;
+		}
+
+		@media screen and (max-width: 600px) {
+			height: 1375px;
+		}
+
+		@media screen and (max-width: 375px) {
+			height: 1250px;
 		}
 	}
 
@@ -483,7 +624,7 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 		}
 
 		svg.roles-pic {
-
+			height: 340px;
 			transform: rotateZ(-3deg);
 			width: 280px;
 
@@ -493,6 +634,11 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 
 			@media screen and (max-width: 768px) {
 				width: 40%;
+				height: 320px;
+			}
+
+			@media screen and (max-width: 375px) {
+				width: 65%
 			}
 		}
 	}
@@ -504,6 +650,7 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 		top: 100px;
 		left: -70px;
 		width: 440px;
+		height: 340px;
 
 		@media screen and (max-width: 1024px) {
 			width: 45%;
@@ -514,6 +661,11 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 			left: 50%;
 			top: -35px;
 			width: 58%;
+		}
+
+		@media screen and (max-width: 375px) {
+			width: 85%;
+			tip: -65%;
 		}
 
 	}
@@ -530,6 +682,11 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 			height: 800px;
     		transform: translateX(-50%);
     		left: 50%;
+		}
+
+		@media screen and (max-width: 375px) {
+			width: 92%;
+			height: 950px;
 		}
 	}
 
@@ -551,6 +708,11 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 		    width: 62%;
 		    max-width: none;
 	    }
+
+	    @media screen and (max-width: 375px) {
+	    	top: 295px;
+	    	width: 80%;
+	    }
 				
 		h3 {
 			margin-bottom: 30px;
@@ -558,17 +720,39 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 
 		h4 {
 			margin-top: 30px;
+
+			@media screen and (max-width: 600px) {
+				position: absolute;
+				top: 23px;
+				margin: 0;
+			}
 		}
 		
-		.first-half {
+		.first-half, .second-half {
 			width: 50%;
 			float: left;
+			position: relative;
+
+			@media screen and (max-width: 600px) {
+				margin: 0 auto;
+				width: 90%;
+				float: none;
+			}
+
+			p {
+				@media screen and (max-width: 700px) {
+					font-size: 18px;
+					line-height: 30px;
+				}
+			}
 		}
 
 		.second-half {
 			padding-left: 40px;
-			width: 50%;
-			float: left;
+
+			@media screen and (max-width: 600px) {
+				padding: 0;
+			}
 		}
 	}
 
@@ -580,6 +764,14 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 
 		@media screen and (max-width: 768px) {
 			width: 100%;
+		}
+
+		@media screen and (max-width: 600px) {
+			margin: 15px 0;
+		}
+
+		@media screen and (max-width: 375px) {
+			display: none;
 		}
 	
 	
@@ -596,6 +788,14 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 			    right: 0px;
 			    height: 1070px;
 			    position: absolute;
+			}
+
+			@media screen and (max-width: 600px) {
+				width: 80%;
+				height: 1250px;
+				right: unset;
+				transform: translateX(-50%);
+				left: 50%;
 			}
 			
 			.border-top, .border-bottom {
@@ -628,6 +828,7 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 		width: 920px;
 		top: -40px;
 		left: -120px;
+		min-width: 460px;
 
 		@media screen and (max-width: 1024px) {
 			width: 92%;
@@ -635,12 +836,24 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 			left: 50%;
 		}
 
-		@media screen and (max-width: $med) {
+		@media screen and (max-width: 768px) {
 			transform: none;
 		    left: 20px;
 		    right: 80px;
 		    width: auto;
 		    height: 345px;
+		}
+
+		@media screen and (max-width: 500px) {
+			height: 480px;
+			width: 92%;
+    		transform: translateX(-50%);
+    		left: 50%;
+    		min-width: unset;
+		}
+
+		@media screen and (max-width: 375px) {
+			height: 740px;
 		}
 	}
 	
@@ -660,12 +873,24 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 			padding: 15px 120px;
 		}
 
-		@media screen and (max-width: $med) {
-			margin: 0 auto;
+		@media screen and (max-width: 768px) {
 			padding: 15px 150px 150px 100px;
+		}
+
+		@media screen and (max-width: 600px) {
+			//padding: 15px 130px 150px 70px;
+			padding: 0 0 150px 90px;
+			width: 75%;
+			margin: unset;
+		}
+
+		@media screen and (max-width: 500px) {
+			padding: 15px 0 150px 0;
+    		margin: 0 auto;
 		}
 	}
 }
+
 
 /**************** Podcast *****************/
 
@@ -700,12 +925,17 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 		//transition: all 1s cubic-bezier(.39,-0.17,.19,1.38);
 
 
-		@media screen and (max-width: $med) {
+		@media screen and (max-width: 768px) {
 			width: 720px;
-    		height: 760px;
+    		//height: 760px;
+    		height: unset;
     		margin: 20px;
 		}
 
+		@media screen and (max-width: 500px) {
+			width: 92%;
+			margin: 20px 0;
+		}
 
 		
 		.travlos-logo {
@@ -722,11 +952,21 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 
 			}
 
-			@media screen and (max-width: $med) {
+			@media screen and (max-width: 768px) {
 				top: 26px;
 				transform: translate(-50%, -50%);
 				left: 50%;
-				width: 300px;
+				width: 330px;
+			}
+
+			@media screen and (max-width: 375px) {
+				max-width: 280px;
+			}
+
+			img {
+				@media screen and (max-width: 768px) {
+					margin: 15px;
+				}
 			}
 		}
 	}
@@ -741,12 +981,19 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 		padding-right: 70px;
 		//transition: all 1s cubic-bezier(.39,-0.17,.19,1.38);
 
-		@media screen and (max-width: $med) {
-		    top: 70px;
+		@media screen and (max-width: 768px) {
+		    //top: 70px;
+		    top: 0;
 		    margin: 0 auto;
-		    padding: 0;
+		    //padding: 0;
+		    padding: 270px 0 140px;
 		    width: 75%;
-		    min-width: 500px;
+		    min-width: 230px;
+		}
+
+		@media screen and (max-width: 375px) {
+			padding: 220px 0 140px;
+			min-width: unset;
 		}
 		
 	
@@ -761,8 +1008,7 @@ h4 { font-size: 18px; letter-spacing: -0.5px; margin-bottom: 30px; }
 
 footer {
 	text-align: center;
-	margin-top: 60px;
-	margin-bottom: 130px;
+	margin: 60px 20px 130px;
 	
 	h4 {
 		max-width: 490px;

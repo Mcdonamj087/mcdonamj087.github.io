@@ -93,6 +93,10 @@ p {
   line-height: 1.8em;
   letter-spacing: 0.23px;
   color: #6C798F; }
+  @media screen and (max-width: 375px) {
+    p {
+      font-size: 16px;
+      line-height: 26px; } }
   p.larger {
     font-size: 20px; }
 
@@ -114,6 +118,17 @@ h4 {
   font-size: 18px;
   letter-spacing: -0.5px;
   margin-bottom: 30px; }
+
+@media screen and (max-width: 375px) {
+  h1 {
+    font-size: 38px;
+    line-height: 48px;
+    letter-spacing: 0.87px; }
+  h2 {
+    font-size: 28px; }
+  h3 {
+    font-size: 22px;
+    letter-spacing: 0.18px; } }
 
 .gradient-text {
   display: inline-block;
@@ -164,6 +179,9 @@ h4 {
   @media screen and (max-width: 768px) {
     #los-nav {
       height: 90px; } }
+  @media screen and (max-width: 375px) {
+    #los-nav {
+      height: 70px; } }
   #los-nav .container {
     max-width: 1100px;
     margin: 0 auto; }
@@ -200,7 +218,11 @@ h4 {
   padding: 210px 0 150px; }
   @media screen and (max-width: 768px) {
     #intro {
-      padding: 120px 0 150px; } }
+      padding-top: 120px; } }
+  @media screen and (max-width: 375px) {
+    #intro {
+      padding-top: 100px;
+      padding-bottom: 60px; } }
   #intro .container {
     max-width: 1100px;
     margin: 0 auto; }
@@ -242,13 +264,20 @@ h4 {
               margin: 0 12px; } }
       @media screen and (max-width: 768px) {
         #intro .col-left .los-image {
-          width: 260px;
+          width: inherit;
+          max-width: 260px;
           margin: 0 auto; } }
   #intro .col-right {
     width: 62%; }
     @media screen and (max-width: 768px) {
       #intro .col-right {
         padding: 0 60px; } }
+    @media screen and (max-width: 470px) {
+      #intro .col-right {
+        padding: 0 40px; } }
+    @media screen and (max-width: 375px) {
+      #intro .col-right {
+        padding: 0 20px; } }
   @media screen and (max-width: 768px) {
     #intro .col-left, #intro .col-right {
       display: block;
@@ -273,56 +302,115 @@ h4 {
   @media screen and (max-width: 768px) {
     #portfolio {
       padding-bottom: 190px; } }
+  @media screen and (max-width: 375px) {
+    #portfolio {
+      padding-bottom: 155px; } }
   #portfolio .container {
     max-width: 1100px;
     margin: 0 auto; }
     #portfolio .container .row {
       position: relative;
       margin: 0 40px; }
+      @media screen and (max-width: 375px) {
+        #portfolio .container .row {
+          margin: 0 20px; } }
   @media screen and (max-width: 768px) {
     #portfolio .gradBorder {
-      width: 80%; } }
+      width: 80%;
+      height: 1100px; } }
+  @media screen and (max-width: 670px) {
+    #portfolio .gradBorder {
+      height: 940px; } }
+  @media screen and (max-width: 570px) {
+    #portfolio .gradBorder {
+      height: 880px; } }
+  @media screen and (max-width: 470px) {
+    #portfolio .gradBorder {
+      height: 1120px; } }
+  @media screen and (max-width: 375px) {
+    #portfolio .gradBorder {
+      background: #fff;
+      box-shadow: 6px 30px 30px rgba(0, 0, 0, 0.1);
+      height: 930px; } }
+  #portfolio .gradBorder > div {
+    display: block; }
+    @media screen and (max-width: 375px) {
+      #portfolio .gradBorder > div {
+        display: none; } }
   #portfolio .portfolio-container {
-    padding: 15px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0; }
+    @media screen and (max-width: 375px) {
+      #portfolio .portfolio-container {
+        padding: 0; } }
     #portfolio .portfolio-container .portfolio-text {
-      width: 82%;
-      margin: 0 auto 100px; }
+      width: 79.5%;
+      margin: 65px auto 100px; }
       @media screen and (max-width: 768px) {
         #portfolio .portfolio-container .portfolio-text {
           width: 62%; } }
-      #portfolio .portfolio-container .portfolio-text h2 {
-        margin-top: 50px; }
+      @media screen and (max-width: 375px) {
+        #portfolio .portfolio-container .portfolio-text {
+          width: inherit;
+          margin: 90px 0 50px; } }
   #portfolio .project-container-row {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 auto; }
+    @media screen and (max-width: 768px) {
+      #portfolio .project-container-row {
+        width: inherit;
+        margin: inherit; } }
     #portfolio .project-container-row .project {
-      max-width: 280px;
-      margin: 0 15px;
+      max-width: 300px;
+      margin: 15px;
       position: relative; }
+      @media screen and (max-width: 768px) {
+        #portfolio .project-container-row .project {
+          max-width: inherit;
+          width: 50%; } }
+      @media screen and (max-width: 470px) {
+        #portfolio .project-container-row .project {
+          margin: 0;
+          max-width: inherit; } }
+      @media screen and (max-width: 470px) {
+        #portfolio .project-container-row .project.p1 {
+          margin-bottom: 35px; } }
+      #portfolio .project-container-row .project.p1 svg {
+        transform: rotateZ(6deg); }
+      #portfolio .project-container-row .project.p2 svg {
+        transform: rotateZ(-11deg); }
+      #portfolio .project-container-row .project.p3 svg {
+        transform: rotateZ(7deg); }
+      @media screen and (max-width: 470px) {
+        #portfolio .project-container-row .project.p4 {
+          text-align: right; } }
+      #portfolio .project-container-row .project.p4 svg {
+        transform: rotateZ(-3deg); }
+      #portfolio .project-container-row .project.p5 svg {
+        transform: rotateZ(2deg); }
+      #portfolio .project-container-row .project.p6 svg {
+        transform: rotateZ(-6deg); }
+      @media screen and (max-width: 768px) {
+        #portfolio .project-container-row .project.p3, #portfolio .project-container-row .project.p6 {
+          display: none; } }
+      @media screen and (max-width: 470px) {
+        #portfolio .project-container-row .project.p2, #portfolio .project-container-row .project.p5 {
+          display: none; } }
+      @media screen and (max-width: 470px) {
+        #portfolio .project-container-row .project.p1, #portfolio .project-container-row .project.p4 {
+          width: 100%; } }
+      @media screen and (max-width: 470px) {
+        #portfolio .project-container-row .project.p1 svg, #portfolio .project-container-row .project.p4 svg {
+          width: 85%; } }
       #portfolio .project-container-row .project svg {
         width: 100%;
         transition: transform 0.7s cubic-bezier(0.47, 0, 0.25, 1); }
-        #portfolio .project-container-row .project svg.p1 {
-          transform: rotateZ(6deg); }
-        #portfolio .project-container-row .project svg.p2 {
-          transform: rotateZ(-11deg); }
-        #portfolio .project-container-row .project svg.p3 {
-          transform: rotateZ(7deg); }
-        #portfolio .project-container-row .project svg.p4 {
-          transform: rotateZ(-3deg); }
-        #portfolio .project-container-row .project svg.p5 {
-          transform: rotateZ(2deg); }
-        #portfolio .project-container-row .project svg.p6 {
-          transform: rotateZ(-6deg); }
         #portfolio .project-container-row .project svg:hover {
           transform: rotateZ(0); }
-        @media screen and (max-width: 768px) {
-          #portfolio .project-container-row .project svg.p3, #portfolio .project-container-row .project svg.p6 {
-            display: none; } }
 
 /**************** Roles *****************/
 #roles .container {
@@ -332,7 +420,13 @@ h4 {
   height: 910px; }
   @media screen and (max-width: 768px) {
     #roles .container {
-      margin-bottom: 275px; } }
+      height: 1150px; } }
+  @media screen and (max-width: 600px) {
+    #roles .container {
+      height: 1375px; } }
+  @media screen and (max-width: 375px) {
+    #roles .container {
+      height: 1250px; } }
 
 #roles .col-roles-pic {
   position: relative; }
@@ -341,6 +435,7 @@ h4 {
       text-align: center;
       top: -125px; } }
   #roles .col-roles-pic svg.roles-pic {
+    height: 340px;
     transform: rotateZ(-3deg);
     width: 280px; }
     @media screen and (max-width: 1024px) {
@@ -348,13 +443,18 @@ h4 {
         width: 29.5%; } }
     @media screen and (max-width: 768px) {
       #roles .col-roles-pic svg.roles-pic {
-        width: 40%; } }
+        width: 40%;
+        height: 320px; } }
+    @media screen and (max-width: 375px) {
+      #roles .col-roles-pic svg.roles-pic {
+        width: 65%; } }
 
 #roles svg.roles-gradient-lines {
   position: absolute;
   top: 100px;
   left: -70px;
-  width: 440px; }
+  width: 440px;
+  height: 340px; }
   @media screen and (max-width: 1024px) {
     #roles svg.roles-gradient-lines {
       width: 45%; } }
@@ -364,6 +464,10 @@ h4 {
       left: 50%;
       top: -35px;
       width: 58%; } }
+  @media screen and (max-width: 375px) {
+    #roles svg.roles-gradient-lines {
+      width: 85%;
+      tip: -65%; } }
 
 #roles .shadow-box {
   position: absolute;
@@ -377,6 +481,10 @@ h4 {
       height: 800px;
       transform: translateX(-50%);
       left: 50%; } }
+  @media screen and (max-width: 375px) {
+    #roles .shadow-box {
+      width: 92%;
+      height: 950px; } }
 
 #roles .roles-text {
   position: absolute;
@@ -394,17 +502,37 @@ h4 {
       top: 370px;
       width: 62%;
       max-width: none; } }
+  @media screen and (max-width: 375px) {
+    #roles .roles-text {
+      top: 295px;
+      width: 80%; } }
   #roles .roles-text h3 {
     margin-bottom: 30px; }
   #roles .roles-text h4 {
     margin-top: 30px; }
-  #roles .roles-text .first-half {
+    @media screen and (max-width: 600px) {
+      #roles .roles-text h4 {
+        position: absolute;
+        top: 23px;
+        margin: 0; } }
+  #roles .roles-text .first-half, #roles .roles-text .second-half {
     width: 50%;
-    float: left; }
+    float: left;
+    position: relative; }
+    @media screen and (max-width: 600px) {
+      #roles .roles-text .first-half, #roles .roles-text .second-half {
+        margin: 0 auto;
+        width: 90%;
+        float: none; } }
+    @media screen and (max-width: 700px) {
+      #roles .roles-text .first-half p, #roles .roles-text .second-half p {
+        font-size: 18px;
+        line-height: 30px; } }
   #roles .roles-text .second-half {
-    padding-left: 40px;
-    width: 50%;
-    float: left; }
+    padding-left: 40px; }
+    @media screen and (max-width: 600px) {
+      #roles .roles-text .second-half {
+        padding: 0; } }
 
 #roles .rolesBorder-wrap {
   position: absolute;
@@ -414,6 +542,12 @@ h4 {
   @media screen and (max-width: 768px) {
     #roles .rolesBorder-wrap {
       width: 100%; } }
+  @media screen and (max-width: 600px) {
+    #roles .rolesBorder-wrap {
+      margin: 15px 0; } }
+  @media screen and (max-width: 375px) {
+    #roles .rolesBorder-wrap {
+      display: none; } }
   #roles .rolesBorder-wrap .gradBorder {
     padding: 15px;
     position: relative;
@@ -427,6 +561,13 @@ h4 {
         right: 0px;
         height: 1070px;
         position: absolute; } }
+    @media screen and (max-width: 600px) {
+      #roles .rolesBorder-wrap .gradBorder {
+        width: 80%;
+        height: 1250px;
+        right: unset;
+        transform: translateX(-50%);
+        left: 50%; } }
     #roles .rolesBorder-wrap .gradBorder .border-top, #roles .rolesBorder-wrap .gradBorder .border-bottom {
       background-color: #FD7DFF;
       background-image: linear-gradient(to right, transparent 50%, #fff 50%); }
@@ -445,7 +586,8 @@ h4 {
   height: 570px;
   width: 920px;
   top: -40px;
-  left: -120px; }
+  left: -120px;
+  min-width: 460px; }
   @media screen and (max-width: 1024px) {
     #philosophy .shadow-box {
       width: 92%;
@@ -458,6 +600,16 @@ h4 {
       right: 80px;
       width: auto;
       height: 345px; } }
+  @media screen and (max-width: 500px) {
+    #philosophy .shadow-box {
+      height: 480px;
+      width: 92%;
+      transform: translateX(-50%);
+      left: 50%;
+      min-width: unset; } }
+  @media screen and (max-width: 375px) {
+    #philosophy .shadow-box {
+      height: 740px; } }
 
 #philosophy .philosophy-text {
   position: relative;
@@ -473,8 +625,16 @@ h4 {
       padding: 15px 120px; } }
   @media screen and (max-width: 768px) {
     #philosophy .philosophy-text {
-      margin: 0 auto;
       padding: 15px 150px 150px 100px; } }
+  @media screen and (max-width: 600px) {
+    #philosophy .philosophy-text {
+      padding: 0 0 150px 90px;
+      width: 75%;
+      margin: unset; } }
+  @media screen and (max-width: 500px) {
+    #philosophy .philosophy-text {
+      padding: 15px 0 150px 0;
+      margin: 0 auto; } }
 
 /**************** Podcast *****************/
 #podcast {
@@ -505,8 +665,12 @@ h4 {
     @media screen and (max-width: 768px) {
       #podcast .shadow-box {
         width: 720px;
-        height: 760px;
+        height: unset;
         margin: 20px; } }
+    @media screen and (max-width: 500px) {
+      #podcast .shadow-box {
+        width: 92%;
+        margin: 20px 0; } }
     #podcast .shadow-box .travlos-logo {
       position: absolute;
       width: 400px;
@@ -522,7 +686,13 @@ h4 {
           top: 26px;
           transform: translate(-50%, -50%);
           left: 50%;
-          width: 300px; } }
+          width: 330px; } }
+      @media screen and (max-width: 375px) {
+        #podcast .shadow-box .travlos-logo {
+          max-width: 280px; } }
+      @media screen and (max-width: 768px) {
+        #podcast .shadow-box .travlos-logo img {
+          margin: 15px; } }
   #podcast svg {
     height: 100%; }
   #podcast .podcast-text {
@@ -531,11 +701,15 @@ h4 {
     padding-right: 70px; }
     @media screen and (max-width: 768px) {
       #podcast .podcast-text {
-        top: 70px;
+        top: 0;
         margin: 0 auto;
-        padding: 0;
+        padding: 270px 0 140px;
         width: 75%;
-        min-width: 500px; } }
+        min-width: 230px; } }
+    @media screen and (max-width: 375px) {
+      #podcast .podcast-text {
+        padding: 220px 0 140px;
+        min-width: unset; } }
     #podcast .podcast-text p {
       margin-top: 20px;
       margin-bottom: 30px; }
@@ -543,8 +717,7 @@ h4 {
 /**************** Footer *****************/
 footer {
   text-align: center;
-  margin-top: 60px;
-  margin-bottom: 130px; }
+  margin: 60px 20px 130px; }
   footer h4 {
     max-width: 490px;
     font-family: 'Rockwell-Bold', serif;
